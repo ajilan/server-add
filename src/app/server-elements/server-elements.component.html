@@ -1,11 +1,12 @@
-<p>Add new Servers or blueprints! </p>
-    <label>Server Name</label>
-    <input type="text" class="form-control" [(ngModel)] = "serverName">
+
+<div 
+   class = "panel panel-default">
+    <div class="panel-heading" >{{ element.name}}</div>
+    <div class="panel-body">
+          <p>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{element.content}}</strong>
+            <em *ngIf="element.type === 'blueprint'"> {{ element.content }}</em>
+          </p>
+    </div>
+</div>
     
-    <label>Server Content</label>
-    <input type="text" class="form-control" [(ngModel)] =" serverContent">
-    <br>
-    <button
-    class="btn btn-primary" (click)="onCreateServer ()">Add Server</button>
-    <button 
-    class="btn btn-primary" (click)="onCreateBlueprint()">Add Server Blueprint</button>
